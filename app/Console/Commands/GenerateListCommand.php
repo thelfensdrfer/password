@@ -89,6 +89,6 @@ class GenerateListCommand extends Command
             die(sprintf('Could not read file %s!', $filename));
         }
 
-        $this->line();
+        $this->line('');
     }
 }
