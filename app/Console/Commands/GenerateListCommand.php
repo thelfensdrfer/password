@@ -32,7 +32,8 @@ class GenerateListCommand extends Command
         $filename = storage_path('list/list.txt');
 
         if (!file_exists($filename)) {
-            die(sprintf('The word list %s does not exist!', $filename));
+            $this->error(sprintf('The word list %s does not exist!', $filename));
+            exit(1);
         }
 
         $nouns = [];
