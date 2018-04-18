@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head></head>
-        <title>Passwort Generator</title>
+        <title>@yield('title')</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/css/main.css" />
@@ -15,7 +15,7 @@
                 <div class="inner">
                     <!-- Logo -->
                     <a href="/" class="logo">
-                        <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Passwort Generator</span>
+                        <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">@yield('title')</span>
                     </a>
                 </div>
             </header>
@@ -24,13 +24,7 @@
             <div id="main">
                 <div class="inner">
                     <section>
-                        <h2>Liste von Passwörtern</h2>
-
-                        <ul>
-                            @foreach ($passwords as $password)
-                                <li><code>{!! $password !!}</code></li>
-                            @endforeach
-                        </ul>
+                        @yield('content')
                     </section>
                 </div>
             </div>

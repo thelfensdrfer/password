@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Words extends Migration
+class SortedWords extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class Words extends Migration
      */
     public function up()
     {
-        Schema::create('words', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('word')->index();
+        Schema::table('words', function (Blueprint $table) {
+            $table->string('word_sorted')
+                ->nullable()
+                ->after('word')
+                ->index();
         });
     }
 
@@ -26,6 +28,8 @@ class Words extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('words');
+        Schema::table('words', function (Blueprint $table) {
+            $table->dropColumn('word_sorted');
+        });
     }
 }
