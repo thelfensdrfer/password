@@ -33,7 +33,7 @@
             <footer id="footer">
                 <div class="inner">
                     <ul class="copyright">
-                        <li>&copy; 2017 Tim Helfensdörfer - <a href="https://thelfensdrfer.de/impressum.html">Impressum</a></li>
+                        <li>&copy; 2017-{{ date('Y') }} Tim Helfensdörfer - <a href="https://thelfensdrfer.de/impressum.html">Impressum</a></li> - <a href="https://thelfensdrfer.de/datenschutz.html">Datenschutzerklärung</a>
                     </ul>
                 </div>
             </footer>
